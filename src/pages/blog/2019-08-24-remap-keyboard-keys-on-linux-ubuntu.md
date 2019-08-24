@@ -67,5 +67,7 @@ xmodmap -e "keycode 135 = Home"
 
 
 Create a file called `.Xmodmap` in the home directory and add following to get these working the next loggin
+```
 keycode 107 = End
-keycode 135 = End
+keycode 135 = Home
+```
