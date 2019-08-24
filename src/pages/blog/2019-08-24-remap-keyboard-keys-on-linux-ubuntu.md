@@ -14,7 +14,7 @@ tags:
 Type `xev` on a terminal. This will open a small window on which will log to terminal information on the input events.
 
 
-** Key: Right Click**
+**Key: Right Click**
 - Info
 ```
 KeyRelease event, serial 43, synthetic NO, window 0x5800001,
@@ -24,7 +24,7 @@ KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-** Key: Print Screen**
+**Key: Print Screen**
 - Info
 
 ```
