@@ -43,9 +43,9 @@ const Navbar = class extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
               <h1
-                style={{ fontWeight: "900", fontSize: "3em", color: "#ff7045" }}
+                style={{ fontWeight: "900", fontSize: "3em", color: "#ff7045", textTransform: "uppercase" }}
               >
-                Bmax Blog
+                Front<span style={{ color: "#565656" }}>Bucket</span>
               </h1>
             </Link>
             {/* Hamburger menu */}
