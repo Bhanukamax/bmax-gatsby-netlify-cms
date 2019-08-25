@@ -6024,6 +6024,13 @@ gatsby-page-utils@^0.0.9:
     micromatch "^3.1.10"
     slash "^1.0.0"
 
+gatsby-plugin-google-analytics@^2.1.11:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.11.tgz#c7b3ed6db9f4b79b3763f73ff03d9b8e1e7a9f03"
+  integrity sha512-kutKpfz31iZ/p3R7SE3b/1J10FodxSB8RJTNNKe6Gyolx75Nki+SmunpQGvOTN7bKPBo6EY3wVqxU5U62Yt7DA==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
 gatsby-plugin-netlify-cms@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.1.11.tgz#a94cd14af6b4bed5e3add200648aa4fd8cc38533"
