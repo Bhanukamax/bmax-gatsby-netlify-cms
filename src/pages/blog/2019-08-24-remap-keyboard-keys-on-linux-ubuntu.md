@@ -9,13 +9,18 @@ tags:
   - linux
   - ubuntu
 ---
+Get Key Info
+------------
 
-**Get Key Info**
 Type `xev` on a terminal. This will open a small window on which will log to terminal information on the input events.
 
 
-**Key: Right Click**
-- Info
+So following are some of the key info that I've copied to remap.
+- **Key: Right Click**
+
+* Info
+
+
 ```
 KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     root 0x23f, subw 0x0, time 4662954, (36,-6), root:(1566,725),
@@ -24,8 +29,10 @@ KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-**Key: Print Screen**
-- Info
+- **Key: Print Screen**
+
+* Info
+
 
 ```
 KeyRelease event, serial 43, synthetic NO, window 0x5800001,
@@ -35,9 +42,11 @@ KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-**Key: Home**
+- **Key: Home**
 
-- Info
+* Info
+
+
 ```
 KeyRelease event, serial 44, synthetic NO, window 0x5800001,
     root 0x23f, subw 0x0, time 4811187, (-437,-143), root:(1093,588),
@@ -45,8 +54,10 @@ KeyRelease event, serial 44, synthetic NO, window 0x5800001,
     XLookupString gives 0 bytes: 
     XFilterEvent returns: False
 ```
-** Key: End **
-- Info
+
+- **Key: End** 
+
+* Info
 
 
 ```
@@ -57,7 +68,13 @@ KeyRelease event, serial 46, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-Run following to map print screen to work as home
+Re map the Keys
+---------------
+
+Let's say you want to re-map the `Print Screen` key to work as the `End` key and the `Right Click` action key to work as the `Home` key.
+
+So to achieve this, you can run following commands in the terminal.
+
 ```
 # Map Print screen to act as End
 xmodmap -e "keycode 107 = End"
@@ -65,8 +82,15 @@ xmodmap -e "keycode 107 = End"
 xmodmap -e "keycode 135 = Home"
 ```
 
+If you did everything right, you should be able to use `Right click` and `Print screen` keys to work as `Home` and `End` keys.
 
-Create a file called `.Xmodmap` in the home directory and add following to get these working the next loggin
+That's all good but if you have to run these commands each time you login and out or restart your machine. Let's see how to save these settings to persist next.
+
+Save re-map key settings
+------------------------
+
+Create a file called `.Xmodmap` in the home directory and add following to get these settings to be automatically working the next time you log in.
+
 ```
 keycode 107 = End
 keycode 135 = Home
