@@ -11,27 +11,30 @@ tags:
 ---
 As a prerequisite you need to have docker `community edition` and `docker compose` [installed](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) in your machine.
 
+* Step one
+  pull docker image for [mysql](https://hub.docker.com/_/mysql) from [docker hub](https://hub.docker.com/)
 
-- Step one
-pull docker image for [mysql](https://hub.docker.com/_/mysql) from [docker hub](https://hub.docker.com/)
 
 ```
-docker pull mysql
+docker pull mysq
 ```
 
-- Run mysql container
+* Run mysql container
+
+
 ```
 docker run --name myMysqlContainer -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
-
 ```
+
 `myMysqlContainer` can be any name for the container.
 
 `5.7` is the version of mysql for the container
 
-- Connect to `mysql` shell of the running docker container
+* Connect to mysql shell of the running docker container
+
+
 ```
 docker exec -it bmaxmysql mysql -uroot -p
-
 ```
 
 This will connect you to the mysql shell from where you can execute any mysql command.
