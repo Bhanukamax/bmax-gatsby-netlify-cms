@@ -34,7 +34,7 @@ docker run --name myMysqlContainer -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
 
 
 ```
-docker exec -it bmaxmysql mysql -uroot -p
+docker exec -it myMysqlContainer mysql -uroot -p
 ```
 
 This will connect you to the mysql shell from where you can execute any mysql command.
