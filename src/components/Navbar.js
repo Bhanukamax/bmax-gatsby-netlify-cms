@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       active: false,
-      navBarActiveClass: ""
+      navBarActiveClass: '',
     };
   }
 
@@ -14,17 +14,17 @@ const Navbar = class extends React.Component {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
+              navBarActiveClass: 'is-active',
             })
           : this.setState({
-              navBarActiveClass: ""
+              navBarActiveClass: '',
             });
       }
     );
@@ -41,9 +41,14 @@ const Navbar = class extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
               <h1
-                style={{ fontWeight: "900", fontSize: "3em", color: "#ff7045", textTransform: "uppercase" }}
+                style={{
+                  fontWeight: '900',
+                  fontSize: '3em',
+                  color: '#ff7045',
+                  textTransform: 'uppercase',
+                }}
               >
-                Front<span style={{ color: "#565656" }}>Bucket</span>
+                Front<span style={{ color: '#565656' }}>Bucket</span>
               </h1>
             </Link>
             {/* Hamburger menu */}
@@ -60,13 +65,7 @@ const Navbar = class extends React.Component {
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-            </div>
-          </div>
+          ></div>
         </div>
       </nav>
     );

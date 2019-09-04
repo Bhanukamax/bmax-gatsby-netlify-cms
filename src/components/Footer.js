@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+// import { Link } from 'gatsby';
 
 const Footer = class extends React.Component {
   render() {
@@ -16,6 +17,12 @@ const Footer = class extends React.Component {
               <div className="column is-4">
                 <section></section>
               </div>
+              {/* TODO: Add Proper link to footer */}
+              {/* <div className="navbar-start has-text-centered">
+                <Link className="navbar-item" to="/about">
+                  About
+                </Link>
+              </div> */}
             </div>
           </div>
         </div>
