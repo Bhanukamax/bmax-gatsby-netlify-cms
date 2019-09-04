@@ -9,15 +9,13 @@ tags:
   - linux
   - ubuntu
 ---
-Get Key Info
-------------
+## Get Key Info
 
 Type `xev` on a terminal. This will open a small window on which will log to terminal information on the input events.
 
-
 So following are some of the key info that I've copied to remap.
-- **Key: Right Click**
 
+* **Key: Right Click**
 * Info
 
 
@@ -29,8 +27,7 @@ KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-- **Key: Print Screen**
-
+* **Key: Print Screen**
 * Info
 
 
@@ -42,8 +39,7 @@ KeyRelease event, serial 43, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-- **Key: Home**
-
+* **Key: Home**
 * Info
 
 
@@ -55,8 +51,7 @@ KeyRelease event, serial 44, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-- **Key: End** 
-
+* **Key: End** 
 * Info
 
 
@@ -68,8 +63,7 @@ KeyRelease event, serial 46, synthetic NO, window 0x5800001,
     XFilterEvent returns: False
 ```
 
-Re map the Keys
----------------
+## Re map the Keys
 
 Let's say you want to re-map the `Print Screen` key to work as the `End` key and the `Right Click` action key to work as the `Home` key.
 
@@ -86,12 +80,28 @@ If you did everything right, you should be able to use `Right click` and `Print 
 
 That's all good but if you have to run these commands each time you login and out or restart your machine. Let's see how to save these settings to persist next.
 
-Save re-map key settings
-------------------------
+## Save re-map key settings
 
 Create a file called `.Xmodmap` in the home directory and add following to get these settings to be automatically working the next time you log in.
 
 ```
 keycode 107 = End
 keycode 135 = Home
+```
+
+Above setting may not work in some systems. In that case you can put the code you ran to remap at the end of your `.profile` file.
+
+Open `~/.profile` file from any text editor
+
+```
+gedit ~/.profile
+```
+
+Then add following at the end of the file:
+
+```
+# Map Print screen to act as End
+xmodmap -e "keycode 107 = End"
+# Map right click to act as Home
+xmodmap -e "keycode 135 = Home"
 ```
