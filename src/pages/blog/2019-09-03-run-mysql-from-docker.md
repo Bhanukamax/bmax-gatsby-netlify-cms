@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Run Mysql from docker
 date: 2019-09-03T17:17:49.403Z
 description: Step by step guide on how to run mysql from docker
-featuredpost: true
+featuredpost: false
 featuredimage: /img/caspar-camille-rubin-fpkvu7rdmco-unsplash.jpg
 tags:
   - docker

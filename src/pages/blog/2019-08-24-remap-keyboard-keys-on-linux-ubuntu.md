@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Remap keyboard keys on Linux (Ubuntu)
 date: 2019-08-24T06:25:14.749Z
 description: How to remap keys on ubuntu
-featuredpost: true
+featuredpost: false
 featuredimage: /img/keys.jpg
 tags:
   - linux
