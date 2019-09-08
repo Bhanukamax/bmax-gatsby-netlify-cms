@@ -14,15 +14,33 @@ Triggers are a feature of `sql` which enables users to run various operations on
 
 Let's look at how to setup one by scratch.
 
-First things first, you need to have a table on which to set the trigger. In this example I'm going to create an `inventory` table for that.
+So test `triggers` out, we will create two tables called `inventory` and `reorder`. Then we'll setup a trigger to create a new entry on the `reorder` table everytime the `inventry` level goes below the `reorder_level`.
 
+**First things first, let's create the two tables**
 
+Inventroy table
 
+```sql
+CREATE TABLE `inventory`(
+  part_id INT  NOT NULL AUTO_INCREMENT,
+  part_name VARCHAR(225) NOT NULL,
+  stock INT,
+  reorder_level INT,
+  reorder_qty INT,
+  PRIMARY KEY (part_id)
+);
 ```
-CREATE TABLE `inventory`(  
-  part_id int auto_increment NOT NULL,
-  part_name varchar(225) NOT NULL,
-  stock int,  reorder_level int,
-  reorder_qty int,
-  primary key (part_id)); 
+
+Reorder table
+
+```sql
+CREATE TABLE `reorder`(
+  id INT NOT NULL AUTO_INCREMENT,
+  part_id INT  NOT NULL,
+  reorder_qty INT,
+  date timestamp,
+  PRIMARY KEY (id)
+);
 ```
+
+Next let's create a
