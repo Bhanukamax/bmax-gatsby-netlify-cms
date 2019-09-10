@@ -44,3 +44,23 @@ CREATE TABLE `reorder`(
 ```
 
 Next let's create a
+
+```sql
+CREATE TRIGGER place_order
+AFTER UPDATE of `stock` in inventory
+FOR EACH ROW
+WHEN (new.stock < new.reorder_level)
+DECLAIR
+  x NUMBER;
+BEGIN
+  SELECT COUNT(*) INTO x
+  FROM reorder
+  WHERE part_id = new.part_id
+  IF x = 0 THEN
+  INSERT INTO `reorder`
+    columns(`part_id`, `reorder_qty`, `date`)
+    values (new.part_id, new.reorder_qty, NOW());
+  END IF
+END;
+
+```
