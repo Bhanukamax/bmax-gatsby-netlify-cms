@@ -21,13 +21,17 @@ class BlogRoll extends React.Component {
                 <header>
                   <p className="post-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                    style={{
+                      fontSize: "1.7em",
+                      fontWeight: "900",
+                      color: "#ff7045"
+                    }}
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
                     <br/>
-                    <small>
+                    <small >
                       {post.frontmatter.date}
                     </small>
                   </p>
