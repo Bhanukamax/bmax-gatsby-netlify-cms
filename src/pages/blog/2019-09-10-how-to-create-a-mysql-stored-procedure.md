@@ -7,7 +7,7 @@ tags:
   - mysql
 ---
 A simple procdure to call and run a select query:
-```mysql
+```sql
 DELIMITER ;;
 CREATE PROCEDURE selectStock()
 select * from inventory; ;;
@@ -15,13 +15,13 @@ DELIMITER ;
 ```
 
 How to use it:
-```mysql
+```sql
 call selectStock()
 ```
 
 get inventory which needs to be ordered.
 
-```mysql
+```sql
 DROP PROCEDURE IF EXISTS  stockToOrder ;
 DELIMITER ;;
 CREATE PROCEDURE stockToOrder()
