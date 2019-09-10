@@ -19,3 +19,13 @@ How to use it:
 call selectStock()
 ```
 
+get inventory which needs to be ordered.
+
+```mysql
+DROP PROCEDURE IF EXISTS  stockToOrder ;
+DELIMITER ;;
+CREATE PROCEDURE stockToOrder()
+select * from inventory
+where stock <= reorder_level; ;;
+DELIMITER ;
+```
