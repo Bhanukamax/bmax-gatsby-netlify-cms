@@ -29,10 +29,40 @@ docker run --name myMysqlContainer -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
 
 `5.7` is the version of mysql for the container
 
-- Connect to mysql shell of the running docker container
+## Connect to mysql shell of the running docker container
 
 ```bash
 docker exec -it myMysqlContainer mysql -uroot -p
 ```
 
+Type `root` and enter when you are prompted to enter the password.
+
 This will connect you to the mysql shell from where you can execute any mysql command.
+
+
+## Connect using a client
+
+To connect using a mysql client like `MySQL Work bench` you need to get the `ip` of this running instance.
+To get the instance `ip` run following on the terminal.
+
+```bash
+docker inspect myMysqlContainer | grep "\"IPAddress\""
+
+```
+
+
+
+## Connect using PhpMyAdmin
+
+
+```bash
+docker run --name myadmin -d --link myMysqlContainer:db -p 8080:80 phpmyadmin/phpmyadmin
+```
+
+Then to get the `ip` address of the running phpmyadmin instance run following
+
+```bash
+docker inspect myadmin | grep "\"IPAddress\""
+```
+
+Type the `ip` address you get in your browser address bar, then you should be able to login using `root` as user name and password.
