@@ -16,7 +16,7 @@ As a prerequisite you need to have docker `community edition` and `docker compos
   pull docker image for [mysql](https://hub.docker.com/_/mysql) from [docker hub](https://hub.docker.com/)
 
 ```bash
-docker pull mysq
+docker pull mysql
 ```
 
 - Run mysql container
