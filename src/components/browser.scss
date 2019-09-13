@@ -2,8 +2,16 @@
   border-radius: 10px;
   background: #011627;
   overflow: auto;
-  padding: 5px 20px;
+  padding: 0;
   margin-bottom: 1.7rem;
+  // Code block background
+  pre, code, span {
+    background: #011627;
+  }
+  &>pre {
+    margin: 0;
+    padding: 1rem 1rem;
+  }
 }
 
 :not(pre) > code[class*="language-"] {
