@@ -6,6 +6,7 @@ featuredpost: true
 tags:
   - mysql
 ---
+Example #1:
 
 Table: `inventory`
 ```
@@ -71,4 +72,27 @@ call selectStock()
     END IF;
   END; ;;
   DELIMITER ;
+  ```
+
+Example #2
+
+Table: `inventory`
+```
+id	name	email
+```
+
+* **Procedure to set user name**
+
+```sql
+ DELIMITER ;;
+
+DROP PROCEDURE IF EXISTS set_name;
+CREATE PROCEDURE set_name(uid INTEGER, name TEXT)
+BEGIN
+  UPDATE users
+  SET name = name
+  WHERE id = uid;
+END;
+
+DELIMITER ;
   ```
